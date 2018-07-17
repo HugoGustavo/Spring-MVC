@@ -14,7 +14,7 @@
 					<td><form:input path="username"/></td>
 				</tr>
 				<tr>
-					<td><form:label path="password">Age</form:label></td>
+					<td><form:label path="password">Password</form:label></td>
 					<td><form:password path="password"/></td>
 				</tr>
 				<tr>
@@ -24,7 +24,18 @@
 				<tr>
 					<td><form:label path="receivePaper">Subscribe Newsletter</form:label></td>
 					<td><form:checkbox path="receivePaper"/></td>
-				</tr>				
+				</tr>
+				<tr>
+					<td><form:label path="favoriteFrameworks">Favorite Web Frameworks</form:label></td>
+					<td><form:checkboxes items="${webFrameworkList}" path="favoriteFrameworks"/></td>
+				</tr>	
+				<tr>
+					<td><form:label path="gender">Gender</form:label></td>
+					<td>
+						<form:radiobutton path="gender" value="M" label="Male"/>
+						<form:radiobutton path="gender" value="F" label="Female"/>
+					</td>
+				<tr>			
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Submit"/>

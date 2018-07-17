@@ -5,7 +5,18 @@ public class User {
 	private String password;
 	private String address;
 	private boolean receivePaper;
+	private String[] favoriteFrameworks;
+	private String gender;
+
 	
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	public void setReceivePaper(boolean receivePaper) {
 		this.receivePaper = receivePaper;
 	}
@@ -30,6 +41,14 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String[] getFavoriteFrameworks() {
+		return favoriteFrameworks;
+	}
+
+	public void setFavoriteFrameworks(String[] favoriteFrameworks) {
+		this.favoriteFrameworks = favoriteFrameworks;
 	}
 	
 }

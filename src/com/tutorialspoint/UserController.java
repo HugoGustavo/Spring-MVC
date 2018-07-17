@@ -1,5 +1,8 @@
 package com.tutorialspoint;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,7 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 	@RequestMapping(value="/user", method=RequestMethod.GET)
 	public ModelAndView user() {
-		return new ModelAndView("user", "command", new User());
+		User user = new User();
+		user.setFavoriteFrameworks((new String[] {"Spring MVC", "Struts 2"}));
+		user.setGender("M");
+		ModelAndView modelAndView = new ModelAndView("user", "command", user);
+		return modelAndView;
 	}
 	
 	@RequestMapping(value="/addUser", method=RequestMethod.POST)
@@ -20,6 +27,18 @@ public class UserController {
 		model.addAttribute("password", user.getPassword());
 		model.addAttribute("address", user.getAddress());
 		model.addAttribute("receivePaper", user.isReceivePaper());
+		model.addAttribute("favoriteFrameworks", user.getFavoriteFrameworks());
+		model.addAttribute("gender", user.getGender());
 		return "users";
+	}
+	
+	@ModelAttribute("webFrameworkList")
+	public List<String> getWebFrameworkList(){
+		List<String> webFrameworkList = new ArrayList<>();
+		webFrameworkList.add("Spring MVC");
+		webFrameworkList.add("Struts 1");
+		webFrameworkList.add("Struts 2");
+		webFrameworkList.add("Apache Wicket");
+		return webFrameworkList;
 	}
 }
