@@ -37,6 +37,10 @@
 				<td>${(gender=="M"? "Male":"Female")} </td>
 			</tr>
 			<tr>
+				<td> Favorite Number </td>
+				<td>${favoriteNumber}</td>
+			</tr>
+			<tr>
 				<td colspan="2">
 					<input type="submit" value="Submit"/>
 				</td>

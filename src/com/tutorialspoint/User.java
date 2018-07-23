@@ -7,8 +7,16 @@ public class User {
 	private boolean receivePaper;
 	private String[] favoriteFrameworks;
 	private String gender;
-
+	private String favoriteNumber;
 	
+	public String getFavoriteNumber() {
+		return favoriteNumber;
+	}
+
+	public void setFavoriteNumber(String favoriteNumber) {
+		this.favoriteNumber = favoriteNumber;
+	}
+
 	public String getGender() {
 		return gender;
 	}

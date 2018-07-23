@@ -35,7 +35,13 @@
 						<form:radiobutton path="gender" value="M" label="Male"/>
 						<form:radiobutton path="gender" value="F" label="Female"/>
 					</td>
-				<tr>			
+				<tr>
+				<tr>
+					<td><form:label path="favoriteNumber">Favorite Number</form:label></td>
+					<td>
+						<form:rabiobuttons path="favoriteNumber" items="${numbersList}"/>
+					</td>
+				</tr>			
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Submit"/>
