@@ -8,7 +8,25 @@ public class User {
 	private String[] favoriteFrameworks;
 	private String gender;
 	private String favoriteNumber;
+	private String country;
+	private String[] skills;
 	
+	public String[] getSkills() {
+		return skills;
+	}
+
+	public void setSkills(String[] skills) {
+		this.skills = skills;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	public String getFavoriteNumber() {
 		return favoriteNumber;
 	}

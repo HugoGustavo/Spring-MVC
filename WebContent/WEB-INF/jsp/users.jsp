@@ -41,9 +41,16 @@
 				<td>${favoriteNumber}</td>
 			</tr>
 			<tr>
-				<td colspan="2">
-					<input type="submit" value="Submit"/>
-				</td>
+				<td>Country</td>
+				<td>${country}</td>
+			</tr>
+			<tr>
+				<td>Skills</td>
+				<td><%
+					String[] skills = (String[]) request.getAttribute("skills");
+					for(String skill : skills)
+						out.println(skill);
+				%></td>
 			</tr>
 		</table>
 	</body>

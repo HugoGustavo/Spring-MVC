@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h2> User Information </h2>
-		<form:form method="POST" action="/HelloWeb/addUser">
+		<form:form method="POST" action="/Spring-MVC/addUser">
 			<table>
 				<tr>
 					<td><form:label path="username">User Name</form:label></td>
@@ -39,7 +39,22 @@
 				<tr>
 					<td><form:label path="favoriteNumber">Favorite Number</form:label></td>
 					<td>
-						<form:rabiobuttons path="favoriteNumber" items="${numbersList}"/>
+						<form:radiobuttons path="favoriteNumber" items="${numbersList}"/>
+					</td>
+				</tr>
+				<tr>
+					<td><form:label path="country">Country</form:label></td>
+					<td>
+						<form:select path="country">
+							<form:option value="NONE" label="Select"/>
+							<form:options items="${countryList}"/>
+						</form:select>
+					</td>
+				</tr>
+				<tr>
+					<td><form:label path="skills">Skills</form:label></td>
+					<td>
+						<form:select path="skills" items="${skillsList}" multiple="true"/>
 					</td>
 				</tr>			
 				<tr>

@@ -17,8 +17,8 @@
 					<td><form:input path="age"/></td>
 				</tr>
 				<tr>
-					<td><form:label path="id">Id</form:label></td>
-					<td><form:input path="id"/></td>
+					<td></td>
+					<td><form:hidden path="id" value="1"/></td>
 				</tr>
 				<tr>
 					<td colspan="2">

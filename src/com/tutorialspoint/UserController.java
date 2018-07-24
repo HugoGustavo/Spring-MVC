@@ -1,7 +1,9 @@
 package com.tutorialspoint;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,6 +32,8 @@ public class UserController {
 		model.addAttribute("favoriteFrameworks", user.getFavoriteFrameworks());
 		model.addAttribute("gender", user.getGender());
 		model.addAttribute("favoriteNumber", user.getFavoriteNumber());
+		model.addAttribute("country", user.getCountry());
+		model.addAttribute("skills", user.getSkills());
 		return "users";
 	}
 	
@@ -51,5 +55,25 @@ public class UserController {
 		numbersList.add("3");
 		numbersList.add("4");
 		return numbersList;
+	}
+	
+	@ModelAttribute("countryList")
+	public Map<String, String> getCountryList(){
+		Map<String, String> countryList = new HashMap<String, String>();
+		countryList.put("US",  "United States");
+		countryList.put("CH", "China");
+		countryList.put("SG", "Singapore");
+		countryList.put("MY", "Malayasia");
+		return countryList;
+	}
+	
+	@ModelAttribute("skillsList")
+	public Map<String, String> getSkillsList(){
+		Map<String, String> skillList = new HashMap<String, String>();
+		skillList.put("Hibernate", "Hibernate");
+		skillList.put("Spring", "Spring");
+		skillList.put("Apache Wicket", "Apache Wicket");
+		skillList.put("Struts", "Struts");
+		return skillList;
 	}
 }
