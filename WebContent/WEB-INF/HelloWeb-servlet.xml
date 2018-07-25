@@ -18,4 +18,5 @@
    </bean>
    <mvc:resources mapping = "/pages/**" location = "/WEB-INF/pages/" />
    <mvc:annotation-driven/>
+   <bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 </beans>
