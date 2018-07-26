@@ -1,7 +1,12 @@
-package com.tutorialspoint;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
+@SuppressWarnings("deprecation")
 public class Student {
+	@Range(min=1, max=150)
 	private Integer age;
+	@NotEmpty
 	private String name;
 	private Integer id;
 	
