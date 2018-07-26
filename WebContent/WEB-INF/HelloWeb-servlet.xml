@@ -10,19 +10,19 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
  
-   <context:component-scan base-package = "com.tutorialspoint" />
-     
-   <bean id = "viewResolver" class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
-      <property name = "prefix" value = "/WEB-INF/jsp/" />
-      <property name = "suffix" value = ".jsp" />
+   <context:component-scan base-package="com.tutorialspoint" />
+   <bean id="resourceBundleViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+   	<property name="basename" value="views"/>
+   	<property name="order" value="0"/>
    </bean>
+   
+   <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value = "/WEB-INF/jsp/" />
+      <property name="suffix" value = ".jsp" />
+      <property name="order" value="1"/>
+   </bean>
+   
    <bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-   <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
-   <bean name="/helloWorld.htm" class="com.tutorialspoint.HelloController"/>
-   <bean name="/hello*" class="com.tutorialspoint.HelloController"/>
-   <bean name="/welcome.htm" class="com.tutorialspoint.WelcomeController"/>
-   <bean id="helloController" class="com.tutorialspoint.HelloController"/>
-   <bean id="welcomeController" class="com.tutorialspoint.WelcomeController"/>
    <mvc:resources mapping = "/pages/**" location = "/WEB-INF/pages/" />
    <mvc:annotation-driven/>
    
